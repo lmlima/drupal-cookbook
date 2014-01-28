@@ -51,6 +51,17 @@ end
 
 include_recipe 'php'
 include_recipe 'php::module_gd'
+
+package "php-mbstring" do
+  action :install
+  notifies :restart, "service[apache2]", :delayed
+end
+
+php_pear "uploadprogress" do
+  action :install
+  notifies :restart, "service[apache2]", :delayed
+end
+
 # Centos does not include the php-dom extension in it's minimal php install.
 case node['platform_family']
   when 'rhel', 'fedora'
