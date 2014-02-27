@@ -42,3 +42,7 @@ end
 link "/usr/local/bin/drush" do
   to "#{node['drupal']['drush']['dir']}/drush"
 end
+
+package "svn" do
+  action :install
+end
