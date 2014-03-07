@@ -36,7 +36,10 @@ default['drupal']['site']['pass'] = 'drupaladmin'
 default['drupal']['site']['name'] = 'Drupal7'
 default['drupal']['site']['host'] = 'localhost'
 
-default['drupal']['modules'] = ['views', 'webform']
+# Modules to download and enable
+default['drupal']['modules']['enable'] = ['views', 'token']
+# Modules to just download
+default['drupal']['modules']['download'] = ['webform']
 
 default['drupal']['nginx']['user'] = 'vagrant'
 default['drupal']['nginx']['group'] = 'vagrant'

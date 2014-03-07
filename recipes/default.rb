@@ -262,8 +262,9 @@ directory "#{node['drupal']['dir']}/sites/default/files" do
   action :create
 end
 
-if node['drupal']['modules']
-  node['drupal']['modules'].each do |m|
+# Install modules in node['drupal']['modules']['enable']
+if node['drupal']['modules']['enable']
+  node['drupal']['modules']['enable'].each do |m|
     if m.is_a?Array
       drupal_module m.first do
         version m.last
@@ -277,6 +278,23 @@ if node['drupal']['modules']
   end
 end
 
+# Only download (do not enable) modules in node['drupal']['modules']['download']
+if node['drupal']['modules']['download']
+  node['drupal']['modules']['download'].each do |m|
+    if m.is_a?Array
+      drupal_module m.first do
+        version m.last
+        dir node['drupal']['dir']
+        action :download
+      end
+    else
+      drupal_module m do
+        dir node['drupal']['dir']
+        action :download
+      end
+    end
+  end
+end
 
 if node.has_key?('ec2')
   server_fqdn = node['ec2']['public_hostname']
