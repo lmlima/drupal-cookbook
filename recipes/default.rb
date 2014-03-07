@@ -262,6 +262,9 @@ directory "#{node['drupal']['dir']}/sites/default/files" do
   action :create
 end
 
+# Define a list of all modules downloaded
+node['drupal']['modules']['all'] = node['drupal']['modules']['enable'] | node['drupal']['modules']['download']
+
 # Install modules in node['drupal']['modules']['enable']
 if node['drupal']['modules']['enable']
   node['drupal']['modules']['enable'].each do |m|
