@@ -25,7 +25,7 @@ default['drupal']['db']['type'] = 'mysql'
 default['with_postfix'] = true
 default['with_cron'] = true
 
-default['drupal']['version'] = '7.26'
+default['drupal']['version'] = '7.27'
 default['drupal']['dir'] = '/var/www/drupal'
 default['drupal']['db']['database'] = 'drupal'
 default['drupal']['db']['user'] = 'drupal'
