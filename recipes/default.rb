@@ -263,7 +263,7 @@ directory "#{node['drupal']['dir']}/sites/default/files" do
 end
 
 # Define a list of all modules downloaded
-node['drupal']['modules']['all'] = node['drupal']['modules']['enable'] | node['drupal']['modules']['download']
+node.set['drupal']['modules']['all'] = node['drupal']['modules']['enable'] | node['drupal']['modules']['download']
 
 # Install modules in node['drupal']['modules']['enable']
 if node['drupal']['modules']['enable']
