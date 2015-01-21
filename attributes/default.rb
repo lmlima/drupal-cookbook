@@ -65,7 +65,7 @@ default['drupal']['src'] = Chef::Config[:file_cache_path]
 
 default['drupal']['drush']['version'] = '7.x-5.9'
 default['drupal']['drush']['checksum'] = \
-  '3acc2a2491fef987c17e85122f7d3cd0bc99cefd1bc70891ec3a1c4fd51dcceer'
+  '3acc2a2491fef987c17e85122f7d3cd0bc99cefd1bc70891ec3a1c4fd51dccee'
 default['drupal']['drush']['dir'] = '/usr/local/drush'
 
 
