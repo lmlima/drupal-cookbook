@@ -63,9 +63,9 @@ default['php-fpm']['pool']['drupal']['max_requests'] = 500
 set_unless['drupal']['db']['password'] = secure_password
 default['drupal']['src'] = Chef::Config[:file_cache_path]
 
-default['drupal']['drush']['version'] = '7.x-5.9'
+default['drupal']['drush']['version'] = '6.5.0'
 default['drupal']['drush']['checksum'] = \
-  '3acc2a2491fef987c17e85122f7d3cd0bc99cefd1bc70891ec3a1c4fd51dccee'
+  '0e6bfb8a4bd75846dbca25f6d3e3130a706546f6a62edadce2eb00099750e2a7'
 default['drupal']['drush']['dir'] = '/usr/local/drush'
 
 
